@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.learningspring.o2o.dao.AreaDao"> <!--与AreaDao是一一对应的，要做查询，
+所以是select,id是AreaDao的接口名，resultType单条记录返回的类型，以Area的实体类型返回的-->
+    <select id="queryArea" resultType="com.learningspring.o2o.entity.Area">
+<!--写SQL语句，查询数据库中的数据，根据priority（权重）降序排列-->
+        SELECT area_id,area_name,priority,create_time,last_edit_time
+        FROM tb_area
+        ORDER BY priority DESC
+    </select>
+
+</mapper>
